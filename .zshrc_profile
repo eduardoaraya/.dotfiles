@@ -1,0 +1,14 @@
+source_scripts() {
+  for file in $HOME/scripts/*.sh; do source "$file"; done
+}
+# FZF Confings 
+export FZF_BASE=/usr/share/fzf
+export FZF_DEFAULT_OPTS='--tmux'
+# - fzf open with <C-f>
+fzf-dir() {
+  fzf-cd-widget
+}
+zle -N fzf-dir 
+bindkey '^F' fzf-dir
+
+source_scripts
