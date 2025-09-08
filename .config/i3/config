@@ -21,7 +21,6 @@ set $mod Mod4
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -215,3 +214,11 @@ bar {
 
     tray_output primary
 }
+
+# xrandr --output HDMI-1 --rotate left --left-of DP-1
+# xrandr \
+#      --output DP-1 --primary --auto \
+#      --output HDMI-0 --auto --rotate left --left-of DP-1
+
+exec --no-startup-id xrandr --output DP-0 --mode 2560x1440 --pos 0x0 --rotate normal --output HDMI-0 --mode 1920x1080 --pos 2560x0 --rotate left
+
